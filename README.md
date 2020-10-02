@@ -25,4 +25,4 @@ clique em "RUN AS JAVAAPLICATTION"
 
 O cliente estará rodando e apresentará a seguinte tela:
 
-![Tela Inicial](INDEX.png)
+![Tela Inicial](index.PNG)
