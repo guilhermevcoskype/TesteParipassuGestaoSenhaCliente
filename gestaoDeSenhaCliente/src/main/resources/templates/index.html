@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/template :: header-css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+	<div th:insert="fragments/template :: header"></div>
+
+	<main>
+
+		<div class="container">
+			<div class="container mt-5">
+				<h1 class="text-center mt-5">Sistema de Gestão de Senhas</h1>
+			</div>
+			<section class="container mt-5 border-bottom">
+				<!-- <div sec:authorize="${hasRole('ROLE_USER')}" class="col-2"> -->
+				<div class="row">
+					<div class="col-2">
+						<p class="text-uppercase">Opções de usuário:</p>
+					</div>
+
+					<div class="col-2">
+						<form action="#" th:action="@{/index}" method="post">
+							<input type="hidden" name="reqTipoSenha" th:value="normal" />
+							<button type="submit"
+								class="btn btn-warning btn-sm text-uppercase rounded"
+								title="Pegar Senha">Pegar Senha</button>
+						</form>
+					</div>
+					<div class="col-2">
+						<!-- <div sec:authorize="${hasRole('ROLE_USER')}" class="col-2"> -->
+						<form action="#" th:action="@{/index}" method="post">
+							<input type="hidden" name="reqTipoSenha" th:value="preferencial" />
+							<button type="submit"
+								class="btn btn-warning btn-sm text-uppercase rounded"
+								title="Pegar Senha Preferencial">Pegar Senha
+								Preferencial</button>
+						</form>
+					</div>
+					<div class="col">
+						<!-- <div sec:authorize="${hasRole('ROLE_USER')}"> -->
+						<div th:if="${senhaGerada}" class="container mt-5">
+							<p class="text-uppercase bg-dark text-white text-center" th:text="${senhaGerada}">Sua senha
+								aparecerá aqui</p>
+						</div>
+						<div th:unless="${senhaGerada}" class="container mt-5">
+							<p class="text-uppercase bg-dark text-white text-center">Sua
+								senha aparecerá aqui</p>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</section>
+
+			<section class="container mt-5 border-bottom">
+				<div class="row">
+					<div class="col-2">
+						<p class="text-uppercase">Opções de gerente:</p>
+					</div>
+					<div class="col-2">
+						<!-- 					<div sec:authorize="${hasRole('ROLE_ADMIN')}" class="col-2"> -->
+						<form action="#" th:action="@{/index/visualizarProximaSenha}">
+							<button type="submit"
+								class="btn btn-warning btn-sm text-uppercase rounded"
+								title="Proxima Senha">Proxima Senha</button>
+						</form>
+					</div>
+					<div class="col-2">
+						<!-- 					<div sec:authorize="${hasRole('ROLE_ADMIN')}" class="col-2"> -->
+						<form action="#" th:action="@{/index/zerarsenhas}" method="POST">
+							<button type="submit"
+								class="btn btn-warning btn-sm text-uppercase rounded"
+								title="Zerar Senhas">Zerar Senhas</button>
+						</form>
+					</div>
+					<div class="col"></div>
+				</div>
+			</section>
+
+			<section class="container mt-3 contSenhas">
+				<div th:if="${proximaSenha}" class="container mt-5">
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<p class="text-uppercase bg-dark text-white text-center"
+								th:text="${proximaSenha}"></p>
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</div>
+				<div th:unless="${proximaSenha}" class="container mt-5">
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<p class="text-uppercase bg-dark text-white text-center">A próxima senha
+								aparecerá aqui</p>
+						</div>
+						<div class="col-4"></div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<div th:insert="fragments/template :: footer"></div>
+
+</body>
+</html>

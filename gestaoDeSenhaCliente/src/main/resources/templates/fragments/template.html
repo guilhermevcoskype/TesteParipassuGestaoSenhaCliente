@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="header-css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<meta charset="utf-8" />
+<title>Sistema de Gestão de Senhas</title>
+
+</head>
+
+<body>
+
+	<div class="text-uppercase" th:fragment="header">
+		<section>
+			<nav class="navbar navbar-light bg-light fixed-tops">
+				<div class="container"></div>
+				<!-- <th:block sec:authorize="${!isAuthenticated()}"> -->
+				<a class="nav-item nav-link" href="#"
+					th:href="@{/login}"> Logar </a>
+			</nav>
+		</section>
+	</div>
+
+	<div class="bg-light  texto-rodapé pt-3 mt-auto" th:fragment="footer">
+		<section class="container">
+			<div class="row">
+				<article class="col-sm ">
+					<h4>Desenvolvedor</h4>
+					<p class="">Guilherme do Vale Castro Oliveira</p>
+				</article>
+				<article class="col-sm text">
+					<h4>Sobre o sistema</h4>
+					<p class="">Este sistema é um teste de avaliação para a empresa
+						Paripassu</p>
+				</article>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
