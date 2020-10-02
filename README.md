@@ -24,3 +24,5 @@ clique em "RUN AS JAVAAPLICATTION"
 6- Para acessar a pagina é necessário acessar o localhost na porta 9090 (http://localhost:9090/index ou http://localhost:9090/)
 
 O cliente estará rodando e apresentará a seguinte tela:
+
+![Tela Inicial](INDEX.png)
