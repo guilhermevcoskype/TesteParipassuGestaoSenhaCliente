@@ -26,3 +26,11 @@ clique em "RUN AS JAVAAPLICATTION"
 O cliente estará rodando e apresentará a seguinte tela:
 
 ![Tela Inicial](index.PNG)
+
+Como não consegui colocar a separação entre USUÁRIOS e GERENTE acabei colocando as 2 opções funcionais na própria tela inicial.
+
+Opções de Usuário: O usuário comum pode ser um cliente comum ou preferencial. Os botões de tirar senha de cada um dos 2, ao ser apertado, imprime a senha correspondente na ordem correta. A senha de cada um é mostrada na label de fundo preto ao lado dos botões.
+
+Opções de Gerente: O gerente, como requerido, não retira uma senha, mas pode zerar as senhas ou chamar a próxima senha clicando nos botões correspondentes. Ao chamar a próxima senha a ordem segue a de cada usuário que resgatou a sua senha como o requerido. Caso não tenha próxima senha será informado no label aonde aparecem as senhas.
+
+Logar: O link de logar no canto superior direito leva a uma tela de login, mas ela não faz o login ainda.
